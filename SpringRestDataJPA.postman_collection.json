@@ -15,7 +15,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"fabricante\": \"Yo\",\r\n        \"precio\": 5000,\r\n        \"so\": \"Linux\",\r\n        \"memDisco\": 10000,\r\n        \"tipoDisco\": \"Solido\"\r\n    }",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -23,14 +23,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/laptops",
+					"raw": "http://localhost:8080/saludo",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"laptops"
+						"saludo"
 					]
 				}
 			},
@@ -84,7 +84,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Libro Nuevo\",\r\n    \"author\": \"Actualizado desde Postman\",\r\n    \"pages\": 1,\r\n    \"price\": 0.0,\r\n    \"releaseDate\": \"2022-08-24\",\r\n    \"online\": true\r\n}\r\n",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Book Update\",\r\n    \"author\": \"Update from Postman\",\r\n    \"pages\": 1,\r\n    \"price\": 0.0,\r\n    \"releaseDate\": \"2022-08-24\",\r\n    \"online\": true\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,14 +109,19 @@
 		{
 			"name": "CrearLibro",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\r\n    \"title\": \"New Book\",\r\n    \"author\": \"Me\",\r\n    \"pages\": 1,\r\n    \"price\": 0.0,\r\n    \"releaseDate\": \"2022-08-24\",\r\n    \"online\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/books",
+					"raw": "http://localhost:8080/api/update",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -124,14 +129,14 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"books"
+						"update"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "EliminarLibro",
+			"name": "EliminarUno",
 			"request": {
 				"method": "DELETE",
 				"header": [],
