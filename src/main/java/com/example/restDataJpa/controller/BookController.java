@@ -67,13 +67,24 @@ public class BookController {
             return ResponseEntity.notFound().build();
         }
         Book result = bookRepository.save(book);
+
         return ResponseEntity.ok(result);
     }
 
     //Borrar un libro
     @DeleteMapping("/api/delete/{id}")
     public ResponseEntity<Book> delete(@PathVariable Long id){
+        if(!bookRepository.existsById(id)) {
+            log.warn("trying to delete a non existent book");
+            return ResponseEntity.notFound().build();
+        }
         bookRepository.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+    @DeleteMapping("/api/deleteAll")
+    public ResponseEntity<Book> deleteAll(){
+        log.info("REST Request for delete all books");
+        bookRepository.deleteAll();
+        return ResponseEntity.notFound().build();
     }
 }
