@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class BookControllerTest {
+    //Si las pruebas se corren todas juntas hay que cambiar el estatus del findById a OK
 
     private TestRestTemplate testRestTemplate;
     @Autowired
@@ -35,7 +36,6 @@ class BookControllerTest {
         ResponseEntity<String> response = testRestTemplate.getForEntity("/saludo",String.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("Hola Mundo", response.getBody());
-
     }
 
     @Test
